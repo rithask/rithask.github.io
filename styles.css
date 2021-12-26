@@ -1,0 +1,56 @@
+body {
+  background-color: #f2f3f4;
+}
+
+.row {
+  background: white;
+
+  -webkit-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 5px 5px 50px 0px rgba(0, 0, 0, 0.25);
+}
+
+#about-me {
+  padding: 25px;
+}
+
+svg {
+  width: 50px;
+  height: 50px;
+}
+
+/* ---------------------------- */
+
+.profileLinks {
+  padding: 10px;
+  text-align: center;
+}
+
+.profileLinkBtn,
+.profileLinkBtn:hover,
+.profileLinkBtn:visited,
+.profileLinkBtn:focus {
+  text-decoration: none;
+  color: #000;
+}
+
+.profileLinkBtn {
+  text-align: center;
+  font-size: 16px;
+  box-shadow: 5px 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: all 0.2s ease-in-out, color 0.4s ease-in-out;
+}
+
+.profileLinkBtn:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.profileLinkBtn:active {
+  box-shadow: 0.1em 0 .4em red, -0.1em 0 .4em orangered;
+  transform: translateY(10px);
+}
+
+/* ---------------------------- */
