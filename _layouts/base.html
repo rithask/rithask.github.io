@@ -51,21 +51,20 @@
     }
   </script>
 
-  <nav>
-    <div class="header flex align-center">
-      <span class="flex-grow">
-        <a class="internal-link plain" href="/">{{ site.title }}</a>
-          {% if page.title != null %}
-            <span class="faint">/</span>
-            <a href="{{ page.permalink }}" class="muted plain">{{ page.title }}</a>
-          {% endif %}
-      </span>
-      <span id="theme-toggle" title="Toggle dark mode">
-          <div class="theme-toggle-slide"></div>
-          <div class="theme-toggle-switch"></div>
-      </span>
-  </div>
+  <nav class="flex align-center font-ui">
+    <span class="flex-grow">
+      <a class="internal-link plain" href="/">{{ site.title }}</a>
+        {% if page.title != null %}
+          <span class="faint">/</span>
+          <a href="{{ page.permalink }}" class="muted plain">{{ page.title }}</a>
+        {% endif %}
+    </span>
+    <span id="theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode" type="button" role="switch" aria-checked="true">
+        <div class="theme-toggle-slide"></div>
+        <div class="theme-toggle-switch"></div>
+    </span>
   </nav>
+  
   <main>
     {{ content }}
   </main>
