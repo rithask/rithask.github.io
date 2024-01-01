@@ -42,7 +42,7 @@
   <meta name="twitter:title" content="{% if page.title != null %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
   <meta name="twitter:description" content="{% if page.description != null %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
 
-  <script async src="https://umami.rithask.win/script.js" data-website-id="07520714-5ed5-4396-9092-f74f58e9d87d"></script>
+  <!-- <script async src="https://umami.rithask.win/script.js" data-website-id="07520714-5ed5-4396-9092-f74f58e9d87d"></script> -->
 </head>
 <body>
   <script>
@@ -59,6 +59,10 @@
           <a href="{{ page.permalink }}" class="muted plain">{{ page.title }}</a>
         {% endif %}
     </span>
+    <span class="flex-shrink ssr">
+      <a href="https://photos.rithask.me" class="muted plain">Photos</a>
+      <!-- <a href="/now" class="muted plain ssl mh">Now</a> -->
+  </span>
     <span id="theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode" type="button" role="switch" aria-checked="true">
         <div class="theme-toggle-slide"></div>
         <div class="theme-toggle-switch"></div>
