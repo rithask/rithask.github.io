@@ -64,7 +64,7 @@
         <div class="theme-toggle-switch"></div>
     </span>
   </nav>
-  
+
   <main>
     {{ content }}
   </main>
@@ -81,17 +81,34 @@
   </footer>
 
   <script>
-    var darkMode = document.querySelector("#theme-toggle");
+    var darkModeToggle = document.querySelector("#theme-toggle");
 
-    darkMode.addEventListener("click", function () {
+    function toggleTheme() {
       document.body.classList.toggle("theme-dark");
+      updateThemeState();
+    }
 
-      let theme = "light";
-      if (document.body.classList.contains("theme-dark")) {
-        theme = "dark";
-      }
+    function updateThemeState() {
+      let isDarkMode = document.body.classList.contains("theme-dark");
+      let theme = isDarkMode ? "dark" : "light";
       localStorage.setItem("theme", theme);
+      darkModeToggle.setAttribute("aria-checked", isDarkMode.toString());
+    }
+
+    function initializeTheme() {
+      let isDarkMode = document.body.classList.contains("theme-dark");
+      darkModeToggle.setAttribute("aria-checked", isDarkMode.toString());
+    }
+
+    darkModeToggle.addEventListener("click", toggleTheme);
+
+    window.addEventListener('keydown', function(e) {
+      if (e.key === 'd' || e.key === 'D') {
+        toggleTheme();
+      }
     });
-    </script>
+
+    initializeTheme();
+  </script>
 </body>
 </html>
