@@ -1,0 +1,24 @@
+---
+layout: base
+---
+
+<article>
+  <content>
+    <h1>{{ page.title }}</h1>
+    <div class="muted ms2 font-ui">
+      {% if page.date != null %}
+        <time datetime="{{ page.date | date: "%m %d, %y" }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+      {% endif %}
+      {% if page.date != null and page.reading_time != null %}
+        · 
+      {% endif %}
+      {% if page.reading_time != null %}
+        <span class="reading-time" title="Estimated read time">{{ page.reading_time }} minute read</span>
+      {% endif %}
+    </div>
+    {{ content }}
+    {% if page.twitter != null %}
+      <div class="page-comments"><a href="{{ page.twitter }}">Comment this post on X.com</a></div>
+    {% endif %}
+  </content>
+</article>

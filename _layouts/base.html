@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>{{ site.title }}{% if page.title != null %}&nbsp;&mdash; {{ page.title }}{% endif %}</title>
+
+  <link rel="alternate" type="application/rss+xml" title="Rithas K" href="/feed.xml" />
+
+  {% if page.title != null %}
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:image" content="/assets/images/circle.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="{{ page.title }}" />
+    <meta name="twitter:site" content="@rithask" />
+  {% endif %}
+
+  {% if page.desc %}
+    <meta name="description" content="{{ page.desc }}">
+    <meta property="og:description" content="{{ page.desc }}" />
+  {% else %}
+    <meta name="description" content="Rithas K. I love to reverse engineer stuff and tinker with electronics">
+    <meta property="og:description" content="Rithas K. I love to reverse engineer stuff and tinker with electronics" />
+  {% endif %}
+
+  <meta name="author" content="Rithas K">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/stylesheets/style.css?v=2">
+  {% if page.highlight %}<link rel="stylesheet" href="/assets/stylesheets/highlight.css">{% endif %}
+  <script async src="https://umami.rithask.win/script.js" data-website-id="07520714-5ed5-4396-9092-f74f58e9d87d"></script>
+</head>
+<body>
+  <script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.querySelector('body').classList.add('theme-dark')
+    }
+  </script>
+
+  <nav>
+    <div class="header flex align-center">
+      <span class="flex-grow">
+        <a class="internal-link plain" href="/">{{ site.title }}</a>
+          {% if page.title != null %}
+            <span class="faint">/</span>
+            <a href="{{ page.url }}" class="muted plain">{{ page.title }}</a>
+          {% endif %}
+      </span>
+      <span id="theme-toggle" title="Toggle dark mode">
+          <div class="theme-toggle-slide"></div>
+          <div class="theme-toggle-switch"></div>
+      </span>
+  </div>
+  </nav>
+  <main>
+    {{ content }}
+  </main>
+
+  <hr class="mn2 ms2">
+  
+  <footer>
+    <a href="/"><img src="/assets/images/profile.jpg" width="50" height="50" style="border-radius: 50%;" alt="avatar" class="author-photo-img"></a>
+    <p class="muted license">
+      This page does not track you. But it does use <a href="https://umami.is">umami</a> to count visits.
+      All content here is in <a href="https://creativecommons.org/publicdomain/zero/1.0/">public domain</a>.
+      An attribution would be nice though. Design by <a href="https://stephango.com">Steph</a>.
+    </p>
+  </footer>
+
+  <script>
+    var darkMode = document.querySelector("#theme-toggle");
+
+    darkMode.addEventListener("click", function () {
+      document.body.classList.toggle("theme-dark");
+
+      let theme = "light";
+      if (document.body.classList.contains("theme-dark")) {
+        theme = "dark";
+      }
+      localStorage.setItem("theme", theme);
+    });
+    </script>
+</body>
+</html>

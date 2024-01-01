@@ -1,23 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: base
+---
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<div class="wrap">
+  <section class="muted">
+    <p>
+      I love to reverse engineer stuff and tinker with electronics. Mostly, I spend my time messing around with self-hosted services that amazing people have built.
+    </p>
+    <p>
+      Check out my <a href="https://github.com/rithask" data-umami-event="github-link">github</a>,
+      ping me on
+      <a href="https://twitter.com/rithaask" data-umami-event="twitter-link">twitter</a>
+      or send me
+      <a href="mailto:&#114;&#105;&#116;&#104;&#97;&#115;&#107;&#43;&#115;&#105;&#116;&#101;&#64;&#114;&#105;&#116;&#104;&#97;&#115;&#107;&#46;&#109;&#101;" data-umami-event="email-link">an email</a>.
 
-    <link href="styles.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="script.js"></script>
+      <!-- You could fund my work with <a href="/funding">sponsorship</a>. -->
+    </p>
+  </section>
 
-    <title>Rithas K</title>
-</head>
+  <hr class="mn2 ms2">
 
-<body>
-    <div class="container noise">
-        <div class="text-container">
-            Hi, I'm Rithas Muhammed K
-        </div>
-    </div>
-</body>
-
-</html>
+  <section>
+    <p class="muted font-ui"><a href="/" class="muted internal-link">Writing</a></p>
+    <ul class="list-plain tabular-nums">
+      {% for post in site.posts %}
+      <li>
+        <a href="{{ post.url }}" class="internal-link plain">
+          <flex class="align-baseline">
+            <span class="muted ppr flex-shrink small mh nowrap font-ui">{{ post.date | date: "%Y" }} · {{ post.date | date: "%m" }}</span>
+            <u>{{ post.title }}</u>
+          </flex>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+</div>

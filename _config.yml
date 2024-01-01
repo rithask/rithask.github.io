@@ -1,0 +1,6 @@
+title: Rithas K
+description: Rithas K
+url: https://rithask.me
+permalink: /:title/
+markdown: kramdown
+exclude: ["Makefile", "README.md"]
