@@ -1,118 +1,169 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>{% if page.title != null %}{{ page.title }}&nbsp; &mdash; {% endif %}{{ site.title }}</title>
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      {% if page.title != null %}{{ page.title }}&nbsp; &mdash; {% endif %}{{
+      site.title }}
+    </title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  {% if page.description %}
-    <meta name="description" content="{{ page.description }}">
-  {% else %}
-    <meta name="description" content="{{ site.description }}">
-  {% endif %}
-  <meta name="author" content="{{ site.title }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% if page.description %}
+    <meta name="description" content="{{ page.description }}" />
+    {% else %}
+    <meta name="description" content="{{ site.description }}" />
+    {% endif %}
+    <meta name="author" content="{{ site.title }}" />
 
-  <link rel="canonical" href="{{ site.base_url }}{{ page.permalink }}">
-  <link rel="icon" href="{{ site.base_url }}/favicon.ico" sizes="32x32">
-  <link rel="icon" href="{{ site.base_url }}/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="{{ site.base_url }}/apple-touch-icon.png">
-  <link rel="stylesheet" href="/style.css" type="text/css">
-  <link rel="alternate" href="{{ site.base_url }}/feed.xml" type="application/atom+xml" title="{{ site.title }}">
-  <link rel="alternate" href="{{ site.base_url }}/feed.json" type="application/feed+json" title="{{ site.title }}">
+    <link rel="canonical" href="{{ site.base_url }}{{ page.permalink }}" />
+    <link rel="icon" href="{{ site.base_url }}/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="{{ site.base_url }}/icon.svg" type="image/svg+xml" />
+    <link
+      rel="apple-touch-icon"
+      href="{{ site.base_url }}/apple-touch-icon.png" />
+    <link rel="stylesheet" href="/style.css" type="text/css" />
+    <link
+      rel="alternate"
+      href="{{ site.base_url }}/feed.xml"
+      type="application/atom+xml"
+      title="{{ site.title }}" />
+    <link
+      rel="alternate"
+      href="{{ site.base_url }}/feed.json"
+      type="application/feed+json"
+      title="{{ site.title }}" />
 
-  <meta property="og:site_name" content="{{ site.title }}">
-  <meta property="og:url" content="{{ site.base_url }}{{ page.permalink }}">
-  <meta property="og:title" content="{% if page.title != null %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-  <meta property="og:description" content="{% if page.description != null %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-  <meta property="og:type" content="article">
-  {% if page.image %}
-    <meta property="og:image" content="{{ site.base_url }}/assets/covers/{{ page.image }}">
-  {% else %}
-    <meta property="og:image" content="{{ site.base_url }}/assets/{{ site.image }}">
-  {% endif %}
+    <meta property="og:site_name" content="{{ site.title }}" />
+    <meta property="og:url" content="{{ site.base_url }}{{ page.permalink }}" />
+    <meta
+      property="og:title"
+      content="{% if page.title != null %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+    <meta
+      property="og:description"
+      content="{% if page.description != null %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+    <meta property="og:type" content="article" />
+    {% if page.image %}
+    <meta
+      property="og:image"
+      content="{{ site.base_url }}/assets/covers/{{ page.image }}" />
+    {% else %}
+    <meta
+      property="og:image"
+      content="{{ site.base_url }}/assets/{{ site.image }}" />
+    {% endif %}
 
-  <meta name="twitter:card" content="summary_large_image">
-  {% if page.image %}
-    <meta name="twitter:image" content="{{ site.base_url }}/assets/covers/{{ page.image }}">
-  {% else %}
-    <meta name="twitter:image" content="{{ site.base_url }}/assets/{{ site.image }}">
-  {% endif %}
-  <meta name="twitter:site" content="{{ site.twitter }}">
-  <meta name="twitter:creator" content="{{ site.twitter }}">
-  <meta name="twitter:title" content="{% if page.title != null %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-  <meta name="twitter:description" content="{% if page.description != null %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="twitter:card" content="summary_large_image" />
+    {% if page.image %}
+    <meta
+      name="twitter:image"
+      content="{{ site.base_url }}/assets/covers/{{ page.image }}" />
+    {% else %}
+    <meta
+      name="twitter:image"
+      content="{{ site.base_url }}/assets/{{ site.image }}" />
+    {% endif %}
+    <meta name="twitter:site" content="{{ site.twitter }}" />
+    <meta name="twitter:creator" content="{{ site.twitter }}" />
+    <meta
+      name="twitter:title"
+      content="{% if page.title != null %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+    <meta
+      name="twitter:description"
+      content="{% if page.description != null %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
 
-  <!-- <script async src="https://umami.rithask.win/script.js" data-website-id="07520714-5ed5-4396-9092-f74f58e9d87d"></script> -->
-</head>
-<body>
-  <script>
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.querySelector('body').classList.add('theme-dark')
-    }
-  </script>
+    <script
+      async
+      src="https://umami.rithask.win/script.js"
+      data-website-id="07520714-5ed5-4396-9092-f74f58e9d87d"></script>
+  </head>
+  <body>
+    <script>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.querySelector("body").classList.add("theme-dark");
+      }
+    </script>
 
-  <nav class="flex align-center font-ui">
-    <span class="flex-grow">
-      <a class="internal-link plain" href="/">{{ site.title }}</a>
+    <nav class="flex align-center font-ui">
+      <span class="flex-grow">
+        <a class="internal-link plain" href="/">{{ site.title }}</a>
         {% if page.title != null %}
-          <span class="faint">/</span>
-          <a href="{{ page.permalink }}" class="muted plain">{{ page.title }}</a>
+        <span class="faint">/</span>
+        <a href="{{ page.permalink }}" class="muted plain">{{ page.title }}</a>
         {% endif %}
-    </span>
-    <span class="flex-shrink ssr">
-      <a href="https://photos.rithask.me" class="muted plain">Photos</a>
-      <!-- <a href="/now" class="muted plain ssl mh">Now</a> -->
-  </span>
-    <span id="theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode" type="button" role="switch" aria-checked="true">
+      </span>
+      <span class="flex-shrink ssr">
+        <a href="https://photos.rithask.me" class="muted plain">Photos</a>
+        <!-- <a href="/now" class="muted plain ssl mh">Now</a> -->
+      </span>
+      <span
+        id="theme-toggle"
+        title="Toggle dark mode"
+        aria-label="Toggle dark mode"
+        type="button"
+        role="switch"
+        aria-checked="true">
         <div class="theme-toggle-slide"></div>
         <div class="theme-toggle-switch"></div>
-    </span>
-  </nav>
+      </span>
+    </nav>
 
-  <main>
-    {{ content }}
-  </main>
+    <main>{{ content }}</main>
 
-  <hr class="mn2 ms2">
-  
-  <footer>
-    <a href="/"><img src="/assets/images/profile.jpg" width="50" height="50" style="border-radius: 50%;" alt="avatar" class="author-photo-img"></a>
-    <p class="muted license">
-      This page does not track you. But it uses <a href="https://umami.is">umami</a> to count the number of visits.
-      All content here is in <a href="https://creativecommons.org/publicdomain/zero/1.0/">public domain</a>.
-      Design by <a href="https://stephango.com">Steph Ango</a>.
-    </p>
-  </footer>
+    <hr class="mn2 ms2" />
 
-  <script>
-    var darkModeToggle = document.querySelector("#theme-toggle");
+    <footer>
+      <a href="/"
+        ><img
+          src="/assets/images/profile.jpg"
+          width="50"
+          height="50"
+          style="border-radius: 50%"
+          alt="avatar"
+          class="author-photo-img"
+      /></a>
+      <p class="muted license">
+        This page does not track you. But it uses
+        <a href="https://umami.is">umami</a> to count the number of visits. All
+        content here is in
+        <a href="https://creativecommons.org/publicdomain/zero/1.0/"
+          >public domain</a
+        >. Design by <a href="https://stephango.com">Steph Ango</a>.
+      </p>
+    </footer>
 
-    function toggleTheme() {
-      document.body.classList.toggle("theme-dark");
-      updateThemeState();
-    }
+    <script>
+      var darkModeToggle = document.querySelector("#theme-toggle");
 
-    function updateThemeState() {
-      let isDarkMode = document.body.classList.contains("theme-dark");
-      let theme = isDarkMode ? "dark" : "light";
-      localStorage.setItem("theme", theme);
-      darkModeToggle.setAttribute("aria-checked", isDarkMode.toString());
-    }
-
-    function initializeTheme() {
-      let isDarkMode = document.body.classList.contains("theme-dark");
-      darkModeToggle.setAttribute("aria-checked", isDarkMode.toString());
-    }
-
-    darkModeToggle.addEventListener("click", toggleTheme);
-
-    window.addEventListener('keydown', function(e) {
-      if (e.key === 'd' || e.key === 'D') {
-        toggleTheme();
+      function toggleTheme() {
+        document.body.classList.toggle("theme-dark");
+        updateThemeState();
       }
-    });
 
-    initializeTheme();
-  </script>
-</body>
+      function updateThemeState() {
+        let isDarkMode = document.body.classList.contains("theme-dark");
+        let theme = isDarkMode ? "dark" : "light";
+        localStorage.setItem("theme", theme);
+        darkModeToggle.setAttribute("aria-checked", isDarkMode.toString());
+      }
+
+      function initializeTheme() {
+        let isDarkMode = document.body.classList.contains("theme-dark");
+        darkModeToggle.setAttribute("aria-checked", isDarkMode.toString());
+      }
+
+      darkModeToggle.addEventListener("click", toggleTheme);
+
+      window.addEventListener("keydown", function (e) {
+        if (e.key === "d" || e.key === "D") {
+          toggleTheme();
+        }
+      });
+
+      initializeTheme();
+    </script>
+  </body>
 </html>
