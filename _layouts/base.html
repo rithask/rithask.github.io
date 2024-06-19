@@ -71,10 +71,7 @@
       name="twitter:description"
       content="{% if page.description != null %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
 
-    <script
-      async
-      src="https://umami.rithask.win/script.js"
-      data-website-id="07520714-5ed5-4396-9092-f74f58e9d87d"></script>
+    {% if site.env.ANALYTICS %} {{ site.env.ANALYTICS | safe }} {% endif %}
   </head>
   <body>
     <script>
