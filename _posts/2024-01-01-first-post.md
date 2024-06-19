@@ -1,7 +1,8 @@
 ---
 layout: post
-title: 'First blog post'
-tags: ['test']
+title: First blog post
+tags:
+  - test
 reading_time: 1
 description: This is my first blog post. Just testing things out.
 image: first.jpg
