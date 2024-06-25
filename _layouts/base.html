@@ -22,6 +22,7 @@
       rel="apple-touch-icon"
       href="{{ site.base_url }}/apple-touch-icon.png" />
     <link rel="stylesheet" href="/style.css" type="text/css" />
+    <link rel="stylesheet" href="/animations.css" type="text/css" />
     <link
       rel="alternate"
       href="{{ site.base_url }}/feed.xml"
@@ -71,6 +72,15 @@
       name="twitter:description"
       content="{% if page.description != null %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
 
+    <script src="https://unpkg.com/swup@4"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const swup = new Swup({
+          native: true,
+        });
+      });
+    </script>
+
     {% if site.env.ANALYTICS %} {{ site.env.ANALYTICS | safe }} {% endif %}
   </head>
   <body>
@@ -84,53 +94,57 @@
       }
     </script>
 
-    <nav class="flex align-center font-ui">
-      <span class="flex-grow">
-        <a class="internal-link plain" href="/">{{ site.title }}</a>
-        {% if page.title != null %}
-        <span class="faint">/</span>
-        <a href="{{ page.permalink }}" class="muted plain">{{ page.title }}</a>
-        {% endif %}
-      </span>
-      <span class="flex-shrink ssr">
-        <a href="https://photos.rithask.me" class="muted plain">Photos</a>
-        <!-- <a href="/now" class="muted plain ssl mh">Now</a> -->
-      </span>
-      <span
-        id="theme-toggle"
-        title="Toggle dark mode"
-        aria-label="Toggle dark mode"
-        type="button"
-        role="switch"
-        aria-checked="true">
-        <div class="theme-toggle-slide"></div>
-        <div class="theme-toggle-switch"></div>
-      </span>
-    </nav>
+    <div id="swup">
+      <nav class="flex align-center font-ui">
+        <span class="flex-grow">
+          <a class="internal-link plain" href="/">{{ site.title }}</a>
+          {% if page.title != null %}
+          <span class="faint">/</span>
+          <a href="{{ page.permalink }}" class="muted plain"
+            >{{ page.title }}</a
+          >
+          {% endif %}
+        </span>
+        <span class="flex-shrink ssr">
+          <a href="https://photos.rithask.me" class="muted plain">Photos</a>
+          <!-- <a href="/now" class="muted plain ssl mh">Now</a> -->
+        </span>
+        <span
+          id="theme-toggle"
+          title="Toggle dark mode"
+          aria-label="Toggle dark mode"
+          type="button"
+          role="switch"
+          aria-checked="true">
+          <div class="theme-toggle-slide"></div>
+          <div class="theme-toggle-switch"></div>
+        </span>
+      </nav>
 
-    <main>{{ content }}</main>
+      <main>{{ content }}</main>
 
-    <hr class="mn2 ms2" />
+      <hr class="mn2 ms2" />
 
-    <footer>
-      <a href="/"
-        ><img
-          src="/assets/images/profile.jpg"
-          width="50"
-          height="50"
-          style="border-radius: 50%"
-          alt="avatar"
-          class="author-photo-img"
-      /></a>
-      <p class="muted license">
-        This page does not track you. But it uses
-        <a href="https://umami.is">umami</a> to count the number of visits. All
-        content here is in
-        <a href="https://creativecommons.org/publicdomain/zero/1.0/"
-          >public domain</a
-        >. Design by <a href="https://stephango.com">Steph Ango</a>.
-      </p>
-    </footer>
+      <footer>
+        <a href="/"
+          ><img
+            src="/assets/images/profile.jpg"
+            width="50"
+            height="50"
+            style="border-radius: 50%"
+            alt="avatar"
+            class="author-photo-img"
+        /></a>
+        <p class="muted license">
+          This page does not track you. But it uses
+          <a href="https://umami.is">umami</a> to count the number of visits.
+          All content here is in
+          <a href="https://creativecommons.org/publicdomain/zero/1.0/"
+            >public domain</a
+          >. Design by <a href="https://stephango.com">Steph Ango</a>.
+        </p>
+      </footer>
+    </div>
 
     <script>
       var darkModeToggle = document.querySelector("#theme-toggle");
