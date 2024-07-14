@@ -6,7 +6,7 @@ markdown: kramdown
 exclude: ["Makefile", "README.md"]
 image: card.jpg
 twitter: "@rithaask"
-github: "rithaask"
+github: "rithask"
 mail: "&#114;&#105;&#116;&#104;&#97;&#115;&#107;&#43;&#115;&#105;&#116;&#101;&#64;&#114;&#105;&#116;&#104;&#97;&#115;&#107;&#46;&#109;&#101;"
 plugins:
   - jekyll-dotenv
