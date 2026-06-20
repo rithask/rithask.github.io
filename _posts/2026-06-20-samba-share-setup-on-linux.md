@@ -6,7 +6,7 @@ tags:
   - homelab
 reading_time: 2
 description: guide on setting up samba share on linux and accessing them from other machines
-permalink: /samba-share-on-linux
+permalink: /samba-share-on-linux/
 ---
 1. install samba first
 ```shell
